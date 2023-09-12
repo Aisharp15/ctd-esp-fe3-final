@@ -8,7 +8,7 @@ const Layout = () => {
 
     const {state} = useContext(ContextGlobal);
     return (
-        <div className={state.theme}>
+        <div className={`main-container ${state.theme}`}>
             <Navbar/>
             <Outlet/>
             <Footer/>

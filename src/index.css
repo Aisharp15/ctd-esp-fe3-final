@@ -12,7 +12,6 @@ code {
     monospace;
 }
 .favButton{
-  background-color: rgba(136, 136, 136, 0.116);
   padding: 10px;
   border: none;
   width: 100%;
@@ -25,13 +24,21 @@ h1{
 
 nav{
   display: flex;
-  width: 80vw;
-  justify-content: flex-start;
+  justify-content: flex-end;
   padding: 1rem;
 }
 
+nav a {
+  margin-right: 20px;
+}
+
+.rounded-button {
+  border-radius: 5px;
+  border: none;
+  padding: 5px 10px;
+}
+
 a{
-  color: #000;
   text-decoration: none;
   margin: 5px;
   cursor: pointer;
@@ -43,13 +50,11 @@ a:hover{
 footer {
   display: flex;
   justify-content: center;
-  text-align: center;
-  padding: 2rem;
-  position: relative;
+  position: absolute;
   bottom: 0;
-  width: 90%;
-  height: 40px;
-  margin-top: 2rem;
+  left: 0;
+  width: 100%;
+  padding: 20px 0;
 }
 
 footer > img{
@@ -59,6 +64,11 @@ footer > img{
 footer > p{
   margin: 0;
   padding-top: 0.7rem;
+}
+
+.main-container {
+  position: relative;
+  min-height: 100vh;
 }
 
 form{
@@ -118,18 +128,53 @@ tr:nth-child(even) {
 }
 
 .dark{
-  background-color: #12121296;
+  background-color: #222222;
   color: white;
 }
-.dark p, a, h1, h2{
+.dark p, .dark a, .dark h1, .dark h2{
   color: #f5f5f5;
 }
 
 .light {
   color: #1d1d1d;
-  background-color: #f5f5f5;
+  background-color: #eef8fc;
 }
 
-.light p, a, h1, h2 {
+.light p, .light a, .light h1, .light h2 {
   color: #1d1d1d;
+}
+
+
+.light nav, .light footer {
+  background-color: lightblue;
+}
+
+.dark nav, .dark footer{
+  background-color: indigo;
+}
+
+.dark .rounded-button, .dark .add-to-fav-button {
+  background-color: slateblue;
+  color: lightyellow;
+}
+
+.light .rounded-button, .light .add-to-fav-button {
+  background-color: deepskyblue;
+  color: midnightblue;
+}
+
+.container {
+  margin: auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.button-container {
+  display: flex;
+  width: 100%;
+}
+
+
+.remove-from-fav-button {
+  color: red;
 }

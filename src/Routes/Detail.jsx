@@ -11,9 +11,9 @@ const Detail = () => {
   const dentist = state.data.find((dentist) => dentist.id === parseInt(id));
   return (
     <>
-      <h1>Detail Dentist id </h1>
+      <h1>Detail Dentist id: {dentist.id} </h1>
       {dentist &&
-      <div className={state.theme}>
+      <div className="container">
         <table>
           <tbody>
             <tr>
