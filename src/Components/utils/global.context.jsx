@@ -1,16 +1,12 @@
-import { createContext, useReducer, useMemo } from "react";
+import { createContext, useReducer, useEffect } from "react";
 import axios from 'axios';
-import { useEffect } from "react";
 
 export const initialState = {theme: "light", data: [], favs: JSON.parse(localStorage.getItem("favs")) || []}
 
 export const ContextGlobal = createContext(undefined);
 
 export const ContextProvider = ({ children }) => {
-  //Aqui deberan implementar la logica propia del Context, utilizando el hook useMemo
   const [state, dispatch] = useReducer(reducer, initialState);
-
-  const memoizedState = useMemo(() => state, [state]);
 
   function reducer(state, action) {
     switch (action.type) {
@@ -35,11 +31,9 @@ export const ContextProvider = ({ children }) => {
     }
   }
 
-
   async function fetchDentistList(){
     try {
       const response = await axios.get("https://jsonplaceholder.typicode.com/users");
-      // console.log(response.data);
       return response.data;
     }
     catch(error) {
@@ -68,7 +62,7 @@ export const ContextProvider = ({ children }) => {
   
 
   return (
-    <ContextGlobal.Provider value={{state: memoizedState, dispatch, handleThemeChange}}>
+    <ContextGlobal.Provider value={{state, dispatch, handleThemeChange}}>
       {children}
     </ContextGlobal.Provider>
   );
