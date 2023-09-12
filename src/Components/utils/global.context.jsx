@@ -21,7 +21,7 @@ export const ContextProvider = ({ children }) => {
           ...state,
           data: action.payload
         }
-      case "addOrRemoveDentistFromFav":
+      case "favListUpdate":
         return {
           ...state,
           favs: action.payload
