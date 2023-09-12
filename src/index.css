@@ -121,6 +121,15 @@ tr:nth-child(even) {
   background-color: #12121296;
   color: white;
 }
-.dark > a {
-  color: white;
+.dark p, a, h1, h2{
+  color: #f5f5f5;
+}
+
+.light {
+  color: #1d1d1d;
+  background-color: #f5f5f5;
+}
+
+.light p, a, h1, h2 {
+  color: #1d1d1d;
 }
