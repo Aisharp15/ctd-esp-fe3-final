@@ -7,7 +7,7 @@ const Card = ({ name, username, id }) => {
 
   const {state, dispatch} = useContext(ContextGlobal);
 
-  const favAddOrRemoveDentist = () => {
+  const addFav = () => {
     const isDentistInFavs = state.favs.some((dentist) => dentist.id === id);
   
     let updatedFavs;
@@ -34,7 +34,7 @@ const Card = ({ name, username, id }) => {
           <p>{name}</p>
           <p>{username}</p>
       </Link>
-      <button onClick={favAddOrRemoveDentist} className="favButton">Add fav</button>
+      <button onClick={addFav} className="favButton">Add fav</button>
         
     </div>
   );
