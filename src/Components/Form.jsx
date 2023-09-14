@@ -23,7 +23,7 @@ const Form = () => {
     const isNameValid = validateName(name);
     const isEmailValid = validateEmail(email);
     if(isNameValid && isEmailValid) {
-     setMessage(`Gracias ${name}, te contactaremos cuando antes vía mail.`)
+     setMessage(`Gracias ${name}, te contactaremos cuanto antes vía mail.`)
     }
     else{
       setMessage("Por favor, verifique su información nuevamente.")

@@ -50,9 +50,6 @@ a:hover{
 footer {
   display: flex;
   justify-content: center;
-  position: absolute;
-  bottom: 0;
-  left: 0;
   width: 100%;
   padding: 20px 0;
 }
@@ -66,9 +63,17 @@ footer > p{
   padding-top: 0.7rem;
 }
 
+main {
+  margin: auto;
+  padding-bottom: 30px;
+}
+
 .main-container {
   position: relative;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 form{
@@ -99,13 +104,14 @@ form{
 }
 
 .card-grid{
-  display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   gap: 1rem;
   width: 90vw;
   height: auto;
   flex-wrap: wrap;
   margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 230px);
 }
 
 table {
@@ -164,8 +170,7 @@ tr:nth-child(even) {
 }
 
 .container {
-  margin: auto;
-  padding: 0 20px;
+  margin: 0 auto auto auto;
   text-align: center;
 }
 
