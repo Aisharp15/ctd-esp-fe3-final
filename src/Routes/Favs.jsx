@@ -1,8 +1,6 @@
 import React, {useContext} from "react";
 import Card from "../Components/Card";
-import { ContextGlobal } from '../Components/utils/global.context'
-
-//Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
+import { ContextGlobal } from '../Components/utils/global.context';
 
 const Favs = () => {
 
@@ -15,10 +13,10 @@ const Favs = () => {
   return (
     <>
       <div className="container">
-        <h1>Dentists Favs</h1>
+        <h1>Lista de Favoritos</h1>
         { state.favs.length > 0 ? 
         <>
-          <button className="rounded-button" onClick={removeAllFavs}>Borrar </button>
+          <button className="rounded-button text-button" onClick={removeAllFavs}>Borrar</button>
             <div className='card-grid'>
               {state.favs.map((dentist) => (
                 <Card 
@@ -30,7 +28,7 @@ const Favs = () => {
             </div>
           </>
         :
-        <h2>The favs list is empty.</h2>
+        <h2>Aún no tienes dentistas favoritos agregados a tu lista.</h2>
         }
       </div>
     </>

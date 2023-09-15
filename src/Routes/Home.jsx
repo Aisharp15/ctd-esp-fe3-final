@@ -10,7 +10,7 @@ const Home = () => {
 
   return (
     <main >
-      <h1>Home</h1>
+      <h1>Inicio</h1>
       <div className='card-grid'>
        {state.data.map((dentist) => (
         <Card 

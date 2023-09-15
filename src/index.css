@@ -12,9 +12,12 @@ code {
     monospace;
 }
 .favButton{
-  padding: 10px;
+  padding: 5px;
   border: none;
   width: 100%;
+}
+
+button {
   cursor: pointer;
 }
 
@@ -24,7 +27,8 @@ h1{
 
 nav{
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
   padding: 1rem;
 }
 
@@ -49,15 +53,12 @@ a:hover{
 
 footer {
   display: flex;
+  align-items: center;
   justify-content: center;
   width: 100%;
   padding: 20px 0;
 }
 
-footer > img{
-  width: 200px;
-  margin: 0;
-}
 footer > p{
   margin: 0;
   padding-top: 0.7rem;
@@ -80,12 +81,11 @@ form{
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  width: 300px;
-  height: 100px;
   margin: 0 auto;
 }
 
 .card{
+  position: relative;
   display: flex;
   justify-content: space-around;
   flex-direction: column;
@@ -129,13 +129,9 @@ td, th {
   padding: 8px;
 }
 
-tr:nth-child(even) {
-  background-color: #dddddd;
-}
-
 .dark{
   background-color: #222222;
-  color: white;
+  color: #f5f5f5;
 }
 .dark p, .dark a, .dark h1, .dark h2{
   color: #f5f5f5;
@@ -172,6 +168,7 @@ tr:nth-child(even) {
 .container {
   margin: 0 auto auto auto;
   text-align: center;
+  position: relative;
 }
 
 .button-container {
@@ -182,4 +179,94 @@ tr:nth-child(even) {
 
 .remove-from-fav-button {
   color: red;
+}
+
+.icon {
+  max-width: 20px;
+}
+
+.add-to-fav-overlay p, .remove-from-fav-overlay p {
+  padding: 0 20px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.remove-from-fav-overlay p {
+  color: #f5f5f5;
+}
+
+.add-to-fav-overlay p, .error-message-overlay p {
+  color: #1d1d1d;
+}
+
+.error-message-overlay p {
+  padding: 0 10px;
+  font-weight: 600;
+}
+
+.input-field {
+  position: relative;
+  font-size: 16px;
+  margin: 15px 0;
+  display: inline-block;
+}
+
+.input-field input {
+  padding: 12px;
+  border-radius: 3px;
+  min-width: 350px;
+  font-size: 14px;
+  background: none;
+}
+
+.input-field .placeholder {
+  position: absolute;
+  left: 12px;
+  top: 0;
+  width: auto;
+  transform: translateY(-50%);
+  padding: 0 10px;
+  font-size: 14px;
+}
+
+.logo, .footer-logo{
+  max-height: 60px;
+}
+
+.light .input-field .placeholder {
+  color: #222222;
+  background: #eef8fc;
+}
+
+.dark .input-field .placeholder {
+  background: #222222;
+  color: #eef8fc;
+}
+
+.light .input-field input {
+  color: #222222;
+  border: 2px solid #222222;
+}
+.dark .input-field input {
+  color: #eef8fc;
+  border: 2px solid #eef8fc;
+}
+
+.back-button-container {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.form-message {
+  margin-top: 30px;
+}
+
+.form-message p {
+  color: #f5f5f5;
+}
+
+.rounded-button.text-button {
+  font-size: 18px;
+  margin: 10px 0;
+  padding: 10px 20px;
 }
