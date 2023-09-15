@@ -5,8 +5,8 @@ import Navbar from "../Components/Navbar";
 import { ContextGlobal } from '../Components/utils/global.context';
 
 const Layout = () => {
-
     const {state} = useContext(ContextGlobal);
+    
     return (
         <div className={`main-container ${state.theme}`}>
             <Navbar/>
