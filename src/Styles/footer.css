@@ -1,0 +1,29 @@
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 20px 0;
+}
+  
+footer > p{
+    margin: 0;
+}
+
+.footer-logo{
+    max-height: 35px;
+}
+  
+.light footer {
+    background-color: lightblue;
+}
+  
+.dark footer{
+    background-color: indigo;
+}
+  
+@media(min-width: 900px) {
+    .footer-logo {
+        max-height: 60px;
+    }
+}

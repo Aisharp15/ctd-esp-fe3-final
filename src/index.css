@@ -7,11 +7,16 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+p {
+  margin: 0;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-.favButton{
+
+.favButton {
   padding: 5px;
   border: none;
   width: 100%;
@@ -21,47 +26,23 @@ button {
   cursor: pointer;
 }
 
-h1{
-  text-align: center;
-}
-
-nav{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-}
-
-nav a {
-  margin-right: 20px;
-}
-
 .rounded-button {
   border-radius: 5px;
   border: none;
   padding: 5px 10px;
 }
 
-a{
+h1 {
+  text-align: center;
+}
+
+a {
   text-decoration: none;
-  margin: 5px;
   cursor: pointer;
 }
-a:hover{
+
+a:hover {
   color: rgb(136, 136, 136);
-} 
-
-footer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  padding: 20px 0;
-}
-
-footer > p{
-  margin: 0;
-  padding-top: 0.7rem;
 }
 
 main {
@@ -77,63 +58,31 @@ main {
   justify-content: space-between;
 }
 
-form{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  margin: 0 auto;
-}
-
-.card{
-  position: relative;
-  display: flex;
-  justify-content: space-around;
-  flex-direction: column;
-  align-items: center;
-  width: 200px;
-  padding: 0.5rem 0.5rem 0 0.5rem;
-  border: 0.5px solid rgb(136, 136, 136);
-}
-
-.card:hover{
-  border: 0.5px solid rgb(206, 217, 142);
-}
-
-.card img {
-  max-height: 200px;
-}
-
-.card-grid{
-  justify-content: center;
-  gap: 1rem;
-  width: 90vw;
-  height: auto;
-  flex-wrap: wrap;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, 230px);
-}
-
 table {
- border-collapse: collapse;
-    border-spacing: 0;
-    width: 100%;
-    display: table;
-    border: 1px solid #ccc;
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  display: table;
+  border: 1px solid #ccc;
 
 }
 
-td, th {
+td,
+th {
   border: 1px solid #dddddd;
   text-align: left;
   padding: 8px;
 }
 
-.dark{
+.dark {
   background-color: #222222;
   color: #f5f5f5;
 }
-.dark p, .dark a, .dark h1, .dark h2{
+
+.dark p,
+.dark a,
+.dark h1,
+.dark h2 {
   color: #f5f5f5;
 }
 
@@ -142,26 +91,29 @@ td, th {
   background-color: #eef8fc;
 }
 
-.light p, .light a, .light h1, .light h2 {
+.light p,
+.light a,
+.light h1,
+.light h2 {
   color: #1d1d1d;
 }
 
-
-.light nav, .light footer {
-  background-color: lightblue;
-}
-
-.dark nav, .dark footer{
-  background-color: indigo;
-}
-
-.dark .rounded-button, .dark .add-to-fav-button {
+.dark .rounded-button {
   background-color: slateblue;
   color: lightyellow;
 }
 
-.light .rounded-button, .light .add-to-fav-button {
+.dark .rounded-button:hover {
+  background-color: rgb(143, 128, 245);
+}
+
+.light .rounded-button {
   background-color: deepskyblue;
+  color: midnightblue;
+}
+
+.light .rounded-button:hover {
+  background-color: rgb(51, 209, 214);
   color: midnightblue;
 }
 
@@ -171,85 +123,8 @@ td, th {
   position: relative;
 }
 
-.button-container {
-  display: flex;
-  width: 100%;
-}
-
-
-.remove-from-fav-button {
-  color: red;
-}
-
 .icon {
   max-width: 20px;
-}
-
-.add-to-fav-overlay p, .remove-from-fav-overlay p {
-  padding: 0 20px;
-  font-size: 20px;
-  font-weight: 600;
-}
-
-.remove-from-fav-overlay p {
-  color: #f5f5f5;
-}
-
-.add-to-fav-overlay p, .error-message-overlay p {
-  color: #1d1d1d;
-}
-
-.error-message-overlay p {
-  padding: 0 10px;
-  font-weight: 600;
-}
-
-.input-field {
-  position: relative;
-  font-size: 16px;
-  margin: 15px 0;
-  display: inline-block;
-}
-
-.input-field input {
-  padding: 12px;
-  border-radius: 3px;
-  min-width: 350px;
-  font-size: 14px;
-  background: none;
-}
-
-.input-field .placeholder {
-  position: absolute;
-  left: 12px;
-  top: 0;
-  width: auto;
-  transform: translateY(-50%);
-  padding: 0 10px;
-  font-size: 14px;
-}
-
-.logo, .footer-logo{
-  max-height: 60px;
-}
-
-.light .input-field .placeholder {
-  color: #222222;
-  background: #eef8fc;
-}
-
-.dark .input-field .placeholder {
-  background: #222222;
-  color: #eef8fc;
-}
-
-.light .input-field input {
-  color: #222222;
-  border: 2px solid #222222;
-}
-.dark .input-field input {
-  color: #eef8fc;
-  border: 2px solid #eef8fc;
 }
 
 .back-button-container {
@@ -257,16 +132,41 @@ td, th {
   margin-left: 10px;
 }
 
-.form-message {
-  margin-top: 30px;
-}
-
-.form-message p {
-  color: #f5f5f5;
-}
-
 .rounded-button.text-button {
   font-size: 18px;
   margin: 10px 0;
   padding: 10px 20px;
+}
+
+
+@keyframes shakeAndScale {
+
+  0%,
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
+
+  33% {
+    transform: rotate(-45deg) scale(1.3);
+  }
+
+  66% {
+    transform: rotate(45deg) scale(1.3);
+  }
+}
+
+@keyframes bumpScale {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  33% {
+    transform: scale(0.5);
+  }
+
+  66% {
+    transform: scale(1.5);
+  }
 }

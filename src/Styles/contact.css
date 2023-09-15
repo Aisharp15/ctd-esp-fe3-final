@@ -1,0 +1,63 @@
+.contact-container {
+    position: relative;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 0 auto;
+}
+
+.form-message {
+    margin-top: 30px;
+}
+  
+.form-message p {
+    color: #f5f5f5;
+}
+
+.input-field {
+    display: inline-block;
+    position: relative;
+    margin: 15px 0;
+}
+
+.input-field input {
+    padding: 12px;
+    border-radius: 3px;
+    min-width: 350px;
+    font-size: 14px;
+    background: none;
+}
+
+.input-field .placeholder {
+    position: absolute;
+    left: 12px;
+    top: 0;
+    width: auto;
+    transform: translateY(-50%);
+    padding: 0 10px;
+    font-size: 14px;
+}
+
+
+.light .input-field .placeholder {
+    color: #222222;
+    background: #eef8fc;
+}
+
+.dark .input-field .placeholder {
+    background: #222222;
+    color: #eef8fc;
+}
+
+.light .input-field input {
+    color: #222222;
+    border: 2px solid #222222;
+}
+.dark .input-field input {
+    color: #eef8fc;
+    border: 2px solid #eef8fc;
+}
+  
