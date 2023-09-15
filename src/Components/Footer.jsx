@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState} from 'react';
 import { ContextGlobal } from "./utils/global.context";
+import '../Styles/footer.css';
 
 const Footer = () => {
   const {state} = useContext(ContextGlobal);
@@ -21,4 +22,4 @@ const Footer = () => {
   )
 }
 
-export default Footer
+export default Footer;

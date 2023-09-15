@@ -1,9 +1,9 @@
 import React, {useContext} from "react";
 import Card from "../Components/Card";
 import { ContextGlobal } from '../Components/utils/global.context';
+import '../Styles/card.css';
 
 const Favs = () => {
-
   const { state, dispatch } = useContext(ContextGlobal);
 
   const removeAllFavs = () => {

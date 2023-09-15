@@ -51,7 +51,6 @@ export const ContextProvider = ({ children }) => {
     dispatch({ type: "themeChange", payload: theme });
   };
 
-
   useEffect(() => {
     handleDentistListFetch();
   }, []);
@@ -60,7 +59,6 @@ export const ContextProvider = ({ children }) => {
     localStorage.setItem("favs", JSON.stringify(state.favs));
   }, [state.favs]);
   
-
   return (
     <ContextGlobal.Provider value={{state, dispatch, handleThemeChange}}>
       {children}
