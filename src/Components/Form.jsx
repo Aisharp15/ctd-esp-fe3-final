@@ -1,14 +1,13 @@
 import React, {useState} from "react";
 
-
 const Form = () => {
-  //Aqui deberan implementar el form completo con sus validaciones
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [messageType, setMessageType] = useState("");
   const [showMessage, setShowMessage] = useState(false);
+  const [shrinkErrorMessage, setShrinkErrorMessage] = useState(false);
 
   function validateName(value){
     return (value.length > 5);
@@ -26,6 +25,7 @@ const Form = () => {
     if(isNameValid && isEmailValid) {
       setMessageType("success");
       setShowMessage(true);
+      setShrinkErrorMessage(false);
       setMessage(`Gracias ${name}, te contactaremos cuanto antes vía mail.`);
       setTimeout(() => {
         setName("");
@@ -39,50 +39,73 @@ const Form = () => {
       setMessageType("error");
       setShowMessage(true);
       setMessage("Por favor, verifique su información nuevamente.")
+      setTimeout(() => {
+        setShrinkErrorMessage(true);
+      }, 2000)
     }
   }
 
-
-  const messageStyle = {
+  const errorMessageStyle = {
+    zIndex: showMessage ? 0 : -1,
     position: 'absolute',
+    bottom: shrinkErrorMessage ? "-60px" : 0,
     width: '100%',
-    borderRadius: '10px',
-    height: 'auto',
-    padding: '15px 0',
-    opacity:  showMessage ? 1 : 0,
-    backgroundColor: messageType === "success" ? '#3bb143' : '#800000',
-    zIndex: 1,
+    height: shrinkErrorMessage ? "auto" : (showMessage ? "100%" : 0),
+    padding:  '15px 0',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems:"center",
     textAlign: "center",
-    transition: 'all 0.2s ease'
+    borderRadius: '10px',
+    opacity:  showMessage ? 1 : 0,
+    backgroundColor: "rgba(128, 0, 0, 0.7)",
+    backdropFilter: "blur(9px)",
+    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+  }
+
+  const successMessageStyle = {
+    zIndex: showMessage ? 0 : -1,
+    position: 'absolute',
+    bottom: '-60px',
+    width: '100%',
+    height: showMessage ? "100%" : 0,
+    padding:  '45px 0',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems:"center",
+    textAlign: "center",
+    borderRadius: '10px',
+    opacity:  showMessage ? 1 : 0,
+    backgroundColor: 'rgba(59, 177, 67, 0.7)',
+    backdropFilter: "blur(9px)",
+    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
   }
 
   return (
-    <>
-    <form noValidate onSubmit={(e) => {handleFormSubmit(e)}}>
-      <div className="form-container">
-        <div>
-          <label htmlFor="input-nombre" className="input-field">
-            <input id="input-nombre" type="text" value={name} onChange={(e) => {setName(e.target.value)}}/>
-            <span className="placeholder">Nombre completo</span>
+    <div className="contact-container">
+      <form noValidate onSubmit={(e) => {handleFormSubmit(e)}}>
+        <div className="form-container">
+          <div>
+            <label htmlFor="input-nombre" className="input-field">
+              <input id="input-nombre" type="text" value={name} onChange={(e) => {setName(e.target.value)}}/>
+              <span className="placeholder">Nombre completo</span>
+            </label>
+          </div>
+          <div>
+          <label htmlFor="input-email" className="input-field">
+            <input id="input-email" type="email"  value={email} onChange={(e) => {setEmail(e.target.value)}}/>
+            <span className="placeholder">Correo electrónico</span>
           </label>
+          </div> 
         </div>
         <div>
-        <label htmlFor="input-email" className="input-field">
-          <input id="input-email" type="email"  value={email} onChange={(e) => {setEmail(e.target.value)}}/>
-          <span className="placeholder">Correo electrónico</span>
-        </label>
-        </div> 
+          <input type="submit" value="Enviar" className="rounded-button text-button" />
+        </div>
+      </form>
+      <div style={messageType === "error" ? errorMessageStyle : successMessageStyle} className="form-message">  
+          <p>{message}</p>
       </div>
-      <div>
-        <input type="submit" value="Enviar" className="rounded-button text-button" />
-      </div>
-    </form>
-    <div style={messageStyle} className="form-message">  
-        <p>{message}</p>
-      </div>
-    </>
-    
-    
+    </div>
   );
 };
 
