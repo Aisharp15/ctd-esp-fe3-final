@@ -38,6 +38,7 @@ const Form = () => {
     else{
       setMessageType("error");
       setShowMessage(true);
+      setShrinkErrorMessage(false);
       setMessage("Por favor, verifique su información nuevamente.")
       setTimeout(() => {
         setShrinkErrorMessage(true);
