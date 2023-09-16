@@ -159,13 +159,13 @@ const Card = ({ name, username, id }) => {
     <div className="card">
       <div className="card-content" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
         <Link to={`/dentist/${id}`}>    
-            <img src="/images/doctor.jpg" alt="doctors pic" />
-            <p>{name}</p>
-            <p>{username}</p>
+          <img src="/images/doctor.jpg" alt="doctors pic" />
+          <p>{name}</p>
+          <p>{username}</p>
+          <div style={seeDetailsOverlayStyle} className="see-details-overlay">
+            {isCardHovered && <p>Ver detalles</p>}
+          </div>
         </Link>
-        <div style={seeDetailsOverlayStyle} className="see-details-overlay">
-          {isCardHovered && <p>Ver detalles</p>}
-        </div>
         <div style={addToFavOverlayStyle} className="add-to-fav-overlay">
           {addToFavOverlay && <p>Agregado a favoritos con éxito</p>}
         </div>
